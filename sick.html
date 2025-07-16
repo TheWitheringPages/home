@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corruption</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #a9a9a9;
+            font-family: 'Cutive Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 40px;
+        }
+        .content {
+            max-width: 700px;
+            line-height: 1.8;
+        }
+        /* Style for the redacted text */
+        .redacted {
+            background-color: #000;
+            color: #000;
+            user-select: none; /* Prevents highlighting */
+        }
+    </style>
+</head>
+<body>
+    <img src="image2.png" alt="An infected cat">
+    <div class="content">
+        <h2>The Withering</h2>
+        <p>
+            It does not kill fast. It changes. It begins with a cough, a fever, a thirst that water cannot quench. The eyes change first. Then the hunger. Not for prey, but for <span class="redacted">something else entirely</span>. The connection to StarClan is severed. In its place, a new voice whispers. It promises strength. It promises an end to <span class="redacted">suffering.</span>
+        </p>
+        <p>
+            The afflicted are faster, stronger, at least for a period. Their pelts become dull, their scent wrong. They no longer feel pain, or fear, or loyalty. They are merely vessels for the <span class="redacted">entities</span>. The only prevention is <span class="redacted">the pink sauce</span>, a concoction from a fallen <span class ="redacted">entity</span>.
+        </p>
+    </div>
+</body>
+</html>
