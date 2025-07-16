@@ -46,8 +46,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
         import { getFirestore, doc, runTransaction } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-        // --- IMPORTANT ---
-        // PASTE YOUR FIREBASE CONFIGURATION OBJECT HERE
+        // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBfK7cy1I_NOnZFxqGipcedsKCeG6RhdE4",
             authDomain: "thewithering.firebaseapp.com",
@@ -75,9 +74,10 @@
                         currentCount = docSnapshot.data().count;
                     }
                     
-                    const newCount = currentCount + 1;
-                    transaction.set(counterRef, { count: newCount });
-                    return newCount;
+                    // **THE FIX IS HERE:** Renamed the variable to avoid a conflict
+                    const updatedCount = currentCount + 1;
+                    transaction.set(counterRef, { count: updatedCount });
+                    return updatedCount;
                 });
                 
                 // Update the text on the page
