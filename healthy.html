@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #a9a9a9;
+            font-family: 'Cutive Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 40px;
+        }
+        .content {
+            max-width: 700px;
+            line-height: 1.8;
+        }
+        .glitch {
+            animation: glitch-text 2.5s linear infinite;
+        }
+
+        /* Glitch Animation for Text */
+        @keyframes glitch-text {
+            2%,64% { transform: translate(1px,0); }
+            4%,60% { transform: translate(-1px,0); }
+            62%    { transform: translate(0,0) skew(2deg); }
+        }
+    </style>
+</head>
+<body>
+    <img src="image1.png" alt="A healthy cat">
+    <div class="content">
+        <h2>The Old Ways</h2>
+        <p>
+            Before the <p class="glitch">silence</p>, there were four. Before the <p class="glitch">rot</p>, there was StarClan. We hunted, we fought, we lived by a code passed down through <p class="glitch">generations</p>. Moons rose and fell, kits were born, and elders told their stories.
+        </p>
+        <p>
+            But <p class="glitch">something</p> was listening. Something was waiting. The <p class="glitch">whispers</p> started at the edge of hearing, a promise in exchange for... what? We did not listen.         <p class="glitch">We should have.</p>
+        </p>
+    </div>
+</body>
+</html>
