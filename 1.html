@@ -9,24 +9,27 @@
             background-color: #1a1a1a;
             margin: 0;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            font-family: 'Cutive Mono', monospace; /* Added for consistency */
-        }
-        
-        /* This container will hold our custom controls */
-        .custom-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            font-family: 'Cutive Mono', monospace;
         }
 
-        /* Styling for our new Play/Pause button */
+        /* --- MODIFIED CSS FOR POSITIONING --- */
+        .custom-controls {
+            position: fixed; /* Keeps it locked to the viewport */
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: scale(0.85); /* Makes the controls and text smaller */
+            transform-origin: bottom right; /* Scales from the corner */
+        }
+
         #playPauseBtn {
-            background-color: #6b7a6b; /* Sickly green */
+            background-color: #6b7a6b;
             color: #1a1a1a;
             border: none;
             padding: 10px 20px;
@@ -37,10 +40,9 @@
         }
 
         #playPauseBtn:hover {
-            background-color: #a9a9a9; /* Off-white on hover */
+            background-color: #a9a9a9;
         }
 
-        /* Basic styling for the volume slider */
         #volumeSlider {
             cursor: pointer;
         }
@@ -48,15 +50,16 @@
         .image-container {
             display: flex;
             gap: 20px;
-            margin-top: 40px;
             animation: fadeIn 5s;
         }
+
         .image-container img {
             width: 200px;
             height: 200px;
             border: 2px solid #6b7a6b;
             opacity: 0.7;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -64,13 +67,13 @@
     </style>
 </head>
 <body>
-    <audio id="myAudio" src="ominous_whispers.mp3" autoplay loop>
+    <audio id="myAudio" src="ominous_whispers.mp3" loop>
         Your browser does not support the audio element.
     </audio>
 
     <div class="custom-controls">
-        <button id="playPauseBtn">Pause</button>
-        <input type="range" id="volumeSlider" min="0" max="100" value="100">
+        <button id="playPauseBtn">Play</button>
+        <input type="range" id="volumeSlider" min="0" max="100" value="75">
     </div>
 
     <div class="image-container">
@@ -84,14 +87,23 @@
         const playPauseBtn = document.getElementById('playPauseBtn');
         const volumeSlider = document.getElementById('volumeSlider');
 
-        // Since audio is set to autoplay, set the initial button text to "Pause"
         window.onload = function() {
-            // Set the audio to a default volume (e.g., 75%) to be safe
-            audio.volume = 0.75;
-            volumeSlider.value = 75;
+            audio.volume = 0.75; // Set a safe default volume
+
+            // Attempt to play the audio
+            let playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay started! Set button to 'Pause'.
+                    playPauseBtn.textContent = 'Pause';
+                }).catch(error => {
+                    // Autoplay was blocked. Set button to 'Play'.
+                    playPauseBtn.textContent = 'Play';
+                });
+            }
         };
 
-        // Add functionality to the Play/Pause button
         playPauseBtn.addEventListener('click', function() {
             if (audio.paused) {
                 audio.play();
@@ -102,9 +114,7 @@
             }
         });
 
-        // Add functionality to the Volume slider
         volumeSlider.addEventListener('input', function() {
-            // The slider value is 0-100, but audio volume is 0.0-1.0
             audio.volume = volumeSlider.value / 100;
         });
     </script>
