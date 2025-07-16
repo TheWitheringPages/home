@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Veil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #a9a9a9;
+            font-family: 'Cutive Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+        }
+        h1 {
+            color: #5a0000; /* Blood red */
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        #visitor-count {
+            font-weight: bold;
+            color: #6b7a6b; /* Sickly green */
+        }
+    </style>
+</head>
+<body>
+    <img src="image3.png" alt="A symbol">
+    <h1>The veil claims those too curious.</h1>
+    <p>You are not the first to find this place. <span id="visitor-count">...</span> have fallen before you.</p>
+
+    <!-- This script tag now has type="module" -->
+    <script type="module">
+        // Import the functions you need from the SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+        import { getFirestore, doc, runTransaction } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+        // --- IMPORTANT ---
+        // PASTE YOUR FIREBASE CONFIGURATION OBJECT HERE
+        const firebaseConfig = {
+            apiKey: "AIzaSyBfK7cy1I_NOnZFxqGipcedsKCeG6RhdE4",
+            authDomain: "thewithering.firebaseapp.com",
+            projectId: "thewithering",
+            storageBucket: "thewithering.firebasestorage.app",
+            messagingSenderId: "363615770811",
+            appId: "1:363615770811:web:59d2ffea7bd97763d2b19e",
+            measurementId: "G-RMSTT6QMWY"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Function to increment and display the visitor count
+        async function updateVisitorCount() {
+            const counterRef = doc(db, "counters", "grave_visits");
+
+            try {
+                const newCount = await runTransaction(db, async (transaction) => {
+                    const docSnapshot = await transaction.get(counterRef);
+                    
+                    let currentCount = 0;
+                    if (docSnapshot.exists()) {
+                        currentCount = docSnapshot.data().count;
+                    }
+                    
+                    const newCount = currentCount + 1;
+                    transaction.set(counterRef, { count: newCount });
+                    return newCount;
+                });
+                
+                // Update the text on the page
+                document.getElementById('visitor-count').innerText = newCount;
+
+            } catch (e) {
+                console.error("Transaction failed: ", e);
+                document.getElementById('visitor-count').innerText = "Many";
+            }
+        }
+
+        // Call the function when the page loads
+        updateVisitorCount();
+    </script>
+</body>
+</html>
