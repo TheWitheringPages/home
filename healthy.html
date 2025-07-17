@@ -15,23 +15,38 @@
             align-items: center;
             padding: 40px;
         }
-        img {
+        /* --- NEW CSS FOR HOVER EFFECT --- */
+        .image-fader {
+            position: relative;
             width: 150px;
             height: 150px;
             margin-bottom: 40px;
+            display: block; /* Makes the link container have dimensions */
+        }
+        .image-fader img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+        /* The top image is invisible by default */
+        .image-fader .img-top {
+            opacity: 0;
+        }
+        /* On hover, the top image becomes visible */
+        .image-fader:hover .img-top {
+            opacity: 1;
         }
         .content {
             max-width: 700px;
             line-height: 1.8;
         }
-
-        /* --- THE CSS FIX --- */
         .glitch {
-            display: inline-block; /* This allows transform animations on an inline element */
+            display: inline-block;
             animation: glitch-text 2.5s linear infinite;
         }
-
-        /* Glitch Animation for Text */
         @keyframes glitch-text {
             2%,64% { transform: translate(1px,0); }
             4%,60% { transform: translate(-1px,0); }
@@ -40,12 +55,12 @@
     </style>
 </head>
 <body>
-    <img src="image1.png" alt="A healthy cat">
+    <a href="sick.html" class="image-fader">
+        <img src="image1.png" class="img-bottom" alt="A healthy cat">
+        <img src="image2.png" class="img-top" alt="A sick cat">
     <div class="content">
         <h2>The Old</h2>
         
-        <!-- --- THE HTML FIX --- -->
-        <!-- Use <span class="glitch"> for individual words -->
         <p>
             Before the <span class="glitch">silence</span>, there were four. Before the <span class="glitch">withering</span>, there was StarClan. We hunted, we fought, we lived by a code passed down through <span class="glitch">generations.</span>
         </p>
