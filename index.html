@@ -12,93 +12,119 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles to match the theme */
+        /* --- MODERNIZED STYLES --- */
         body {
-            background-color: #1a1a1a;
-            color: #a9a9a9;
-            font-family: 'Inter', sans-serif; /* A modern, clean font */
+            background-image: url('https://raw.githubusercontent.com/TheWitheringPages/home/refs/heads/main/background.jpg');
+            background-size: cover;
+            background-attachment: fixed; /* This creates the parallax scrolling effect */
+            background-position: center center;
+            color: #d1d5db; /* Lighter grey for better contrast */
+            font-family: 'Inter', sans-serif;
         }
+
+        /* Main container for the glass effect */
+        .main-content {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(26, 26, 26, 0.7); /* Semi-transparent background */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         h1, h2, h3 {
-            font-family: 'Cutive Mono', monospace; /* Thematic font for headers */
+            font-family: 'Cutive Mono', monospace;
+            color: #ffffff;
         }
+
+        /* Modernized card style */
         .card {
-            background-color: #2a2a2a;
-            border: 1px solid #444;
-        }
-        .btn {
-            border: 1px solid #6b7a6b;
-            color: #6b7a6b;
+            background-color: rgba(42, 42, 42, 0.5); /* More transparent card */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Modernized button style */
+        .btn {
+            background-color: transparent;
+            border: 2px solid #6b7a6b;
+            color: #6b7a6b;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+
         .btn:hover {
             background-color: #6b7a6b;
             color: #1a1a1a;
+            box-shadow: 0 0 15px rgba(107, 122, 107, 0.5);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="container mx-auto max-w-4xl px-4 py-12">
-        
-        <!-- Header -->
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold tracking-wider text-white uppercase">THE WITHERING</h1>
-        </header>
+    <!-- Main container with glassmorphism effect -->
+    <div class="main-content container mx-auto max-w-5xl my-12 rounded-2xl shadow-2xl">
+        <div class="px-6 py-12 md:px-12">
 
-        <!-- Intro & SoundCloud -->
-        <section class="mb-16">
-            <!-- Replace with your SoundCloud embed code -->
-            <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322210564&color=%2388a1c0&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>
-            <p class="text-lg leading-relaxed text-center">
-                Four Clans–Ridgeclan, Brackenclan, Mistclan and Breezeclan–have long lived in quiet balance across their forest, plains, wetland, and mountain homes. But now, something foul rides the wind. A stench of disease, decay, and death seeps through the trees, clings to the mist, and settles in the bones of the land. Peace is crumbling, and no cat can imagine what darkness has begun to take root.
-            </p>
-        </section>
+            <!-- Hero Section -->
+            <header class="text-center mb-16">
+                <h1 class="text-6xl font-bold tracking-wider uppercase mb-6">THE WITHERING</h1>
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                    Four Clans–Ridgeclan, Brackenclan, Mistclan and Breezeclan–have long lived in quiet balance across their forest, plains, wetland, and mountain homes. But now, something foul rides the wind. A stench of disease, decay, and death seeps through the trees, clings to the mist, and settles in the bones of the land. Peace is crumbling, and no cat can imagine what darkness has begun to take root.
+                </p>
+                <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322210564&color=%2388a1c0&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true" class="rounded-lg"></iframe>
+            </header>
 
-        <!-- Content Grid -->
-        <main class="space-y-12">
+            <!-- Content Grid -->
+            <main class="space-y-16">
 
-            <!-- Card 1: Clan Info -->
-            <article class="card rounded-lg overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
-                <div class="text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-white mb-4">CLAN INFO</h2>
-                    <p class="mb-6">Lore, beliefs, info, archetypes, etc.</p>
-                    <a href="#" class="btn inline-block px-8 py-3 rounded-full font-bold uppercase text-sm tracking-widest">More</a>
-                </div>
-                <img src="image4.jpg" alt="A cat skull on a dark background" class="rounded-lg w-full h-auto object-cover">
-            </article>
+                <!-- Card 1: Clan Info -->
+                <article class="card rounded-xl overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-bold mb-4">CLAN INFO</h2>
+                        <p class="mb-6 text-gray-300">Lore, beliefs, info, archetypes, etc.</p>
+                        <a href="#" class="btn inline-block px-8 py-3 rounded-lg">More</a>
+                    </div>
+                    <img src="image4.jpg" alt="A cat skull on a dark background" class="rounded-lg w-full h-64 object-cover">
+                </article>
 
-            <!-- Card 2: Guidelines -->
-            <article class="card rounded-lg overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
-                <img src="image5.jpg" alt="A cat silhouette on a fence" class="rounded-lg w-full h-auto object-cover md:order-2">
-                 <div class="text-center md:text-right md:order-1">
-                    <h2 class="text-3xl font-bold text-white mb-4">GUIDELINES</h2>
-                    <p class="mb-6">General guidelines, Roleplay guidelines and Oc Guidelines.</p>
-                    <a href="#" class="btn inline-block px-8 py-3 rounded-full font-bold uppercase text-sm tracking-widest">More</a>
-                </div>
-            </article>
+                <!-- Card 2: Guidelines -->
+                <article class="card rounded-xl overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
+                    <img src="image5.jpg" alt="A cat silhouette on a fence" class="rounded-lg w-full h-64 object-cover md:order-2">
+                    <div class="text-center md:text-right md:order-1">
+                        <h2 class="text-4xl font-bold mb-4">GUIDELINES</h2>
+                        <p class="mb-6 text-gray-300">General guidelines, Roleplay guidelines and Oc Guidelines.</p>
+                        <a href="#" class="btn inline-block px-8 py-3 rounded-lg">More</a>
+                    </div>
+                </article>
 
-            <!-- Card 3: Clan & Medicine Cat Codes -->
-            <article class="card rounded-lg overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
-                <div class="text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-white mb-4">CLAN & MEDICINE CAT CODES</h2>
-                    <p class="mb-6">The personal codes each clan lives by as well as the medicine cat code.</p>
-                    <a href="#" class="btn inline-block px-8 py-3 rounded-full font-bold uppercase text-sm tracking-widest">More</a>
-                </div>
-                <img src="image6.jpg" alt="A cat silhouette in a graveyard" class="rounded-lg w-full h-auto object-cover">
-            </article>
+                <!-- Card 3: Clan & Medicine Cat Codes -->
+                <article class="card rounded-xl overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-bold mb-4">CODES</h2>
+                        <p class="mb-6 text-gray-300">The personal codes each clan lives by as well as the medicine cat code.</p>
+                        <a href="#" class="btn inline-block px-8 py-3 rounded-lg">More</a>
+                    </div>
+                    <img src="image6.jpg" alt="A cat silhouette in a graveyard" class="rounded-lg w-full h-64 object-cover">
+                </article>
 
-            <!-- Card 4: The Veil (New) -->
-            <article class="card rounded-lg overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
-                <img src="image7.jpg" alt="A sign" class="rounded-lg w-full h-auto object-cover md:order-2">
-                <div class="text-center md:text-right md:order-1">
-                    <h2 class="text-3xl font-bold text-white mb-4">THE VEIL</h2>
-                    <p class="mb-6">The whispers have found you. A door to the unseen. Do you dare to listen?</p>
-                    <a href="theveil.html" class="btn inline-block px-8 py-3 rounded-full font-bold uppercase text-sm tracking-widest">Enter</a>
-                </div>
-            </article>
+                <!-- Card 4: The Veil -->
+                <article class="card rounded-xl overflow-hidden grid md:grid-cols-2 items-center gap-8 p-8">
+                    <img src="image7.jpg" alt="A sign" class="rounded-lg w-full h-64 object-cover md:order-2">
+                    <div class="text-center md:text-right md:order-1">
+                        <h2 class="text-4xl font-bold mb-4">THE VEIL</h2>
+                        <p class="mb-6 text-gray-300">The whispers have found you. A door to the unseen. Do you dare to listen?</p>
+                        <a href="theveil.html" class="btn inline-block px-8 py-3 rounded-lg">Enter</a>
+                    </div>
+                </article>
 
-        </main>
-
+            </main>
+        </div>
     </div>
 
 </body>
