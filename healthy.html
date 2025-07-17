@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Origin</title>
+    <title>Remembrance</title>
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <style>
         body {
@@ -24,7 +24,10 @@
             max-width: 700px;
             line-height: 1.8;
         }
+
+        /* --- THE CSS FIX --- */
         .glitch {
+            display: inline-block; /* This allows transform animations on an inline element */
             animation: glitch-text 2.5s linear infinite;
         }
 
@@ -39,12 +42,21 @@
 <body>
     <img src="image1.png" alt="A healthy cat">
     <div class="content">
-        <h2>The Old Ways</h2>
+        <h2>The Old</h2>
+        
+        <!-- --- THE HTML FIX --- -->
+        <!-- Use <span class="glitch"> for individual words -->
         <p>
-            Before the <p class="glitch">silence</p>, there were four. Before the <p class="glitch">rot</p>, there was StarClan. We hunted, we fought, we lived by a code passed down through <p class="glitch">generations</p>. Moons rose and fell, kits were born, and elders told their stories.
+            Before the <span class="glitch">silence</span>, there were four. Before the <span class="glitch">withering</span>, there was StarClan. We hunted, we fought, we lived by a code passed down through <span class="glitch">generations.</span>
         </p>
         <p>
-            But <p class="glitch">something</p> was listening. Something was waiting. The <p class="glitch">whispers</p> started at the edge of hearing, a promise in exchange for... what? We did not listen.         <p class="glitch">We should have.</p>
+            Moons rose and fell, kits were born, and elders told their stories.
+        </p>
+        <p>
+            But <span class="glitch">something</span> was listening. Something was waiting. The <span class="glitch">whispers</span> started at the edge of hearing, a promise in exchange for... what? We did not listen.
+        </p>
+        <p>
+            <span class="glitch">We should have.</span>
         </p>
     </div>
 </body>
