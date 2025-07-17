@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Withering | Clan Info</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Using the same modern styles from the homepage */
+        body {
+            background-image: url('https://raw.githubusercontent.com/TheWitheringPages/home/refs/heads/main/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            color: #d1d5db;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .main-content {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1, h2 {
+            font-family: 'Cutive Mono', monospace;
+            color: #ffffff;
+        }
+
+        /* New style for the clan cards */
+        .clan-card {
+            background-color: rgba(42, 42, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .clan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: rgba(107, 122, 107, 0.5);
+        }
+
+        .clan-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain; /* Ensures logo isn't stretched */
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Back button style */
+        .btn-back {
+            color: #a9a9a9;
+            border: 1px solid #a9a9a9;
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            background-color: #a9a9a9;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="main-content container mx-auto max-w-5xl my-12 rounded-2xl shadow-2xl">
+        <div class="px-6 py-12 md:px-12">
+
+            <header class="text-center mb-12">
+                <h1 class="text-5xl font-bold tracking-wider uppercase">CLAN LORE & INFO</h1>
+            </header>
+
+            <!-- Grid of Clan Cards -->
+            <main class="grid md:grid-cols-2 gap-8 mb-12">
+
+                <!-- Brackenclan Card -->
+                <a href="brackenclan.html" class="clan-card rounded-xl">
+                    <img src="brackenlogo.png" alt="Brackenclan Logo" class="clan-logo">
+                    <h2 class="text-3xl font-bold mb-3">BRACKENCLAN</h2>
+                    <p class="text-gray-300">Clever, reclusive, and cautious.</p>
+                </a>
+
+                <!-- Breezeclan Card -->
+                <a href="breezeclan.html" class="clan-card rounded-xl">
+                    <img src="breezelogo.png" alt="Breezeclan Logo" class="clan-logo">
+                    <h2 class="text-3xl font-bold mb-3">BREEZECLAN</h2>
+                    <p class="text-gray-300">swift of paw and sharp of mind, the runners of the open plains who are closest to the whispers on the wind.</p>
+                </a>
+
+                <!-- Mistclan Card -->
+                <a href="mistclan.html" class="clan-card rounded-xl">
+                    <img src="mistlogo.png" alt="Mistclan Logo" class="clan-logo">
+                    <h2 class="text-3xl font-bold mb-3">MISTCLAN</h2>
+                    <p class="text-gray-300">Silence, precision, and reflection. Hunters who thrive in shadow and secrecy.</p>
+                </a>
+
+                <!-- Ridgeclan Card -->
+                <a href="ridgeclan.html" class="clan-card rounded-xl">
+                    <img src="ridgelogo.png" alt="Ridgeclan Logo" class="clan-logo">
+                    <h2 class="text-3xl font-bold mb-3">RIDGECLAN</h2>
+                    <p class="text-gray-300">Tough and proud, the survivors of the harsh mountains are fierce.</p>
+                </a>
+
+            </main>
+
+            <!-- Back Button -->
+            <footer class="text-center">
+                <a href="index.html" class="btn-back inline-block px-8 py-2 rounded-lg font-bold uppercase text-sm tracking-widest">Back</a>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
