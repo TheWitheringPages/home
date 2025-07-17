@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corruption</title>
+    <title>Withering</title>
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <style>
-        body {
+         body {
             background-color: #1a1a1a;
             color: #a9a9a9;
             font-family: 'Cutive Mono', monospace;
@@ -15,25 +15,45 @@
             align-items: center;
             padding: 40px;
         }
-        img {
+        /* --- CSS FOR HOVER EFFECT --- */
+        .image-fader {
+            position: relative;
             width: 150px;
             height: 150px;
             margin-bottom: 40px;
+            display: block;
+        }
+        .image-fader img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .image-fader .img-top {
+            opacity: 0;
+        }
+        .image-fader:hover .img-top {
+            opacity: 1;
         }
         .content {
             max-width: 700px;
             line-height: 1.8;
         }
-        
- .redacted {
+        .redacted {
             background-color: #000;
-            color: #000 !important; /* This forces the text color to be black */
-            user-select: none; /* Prevents highlighting */
+            color: #000 !important;
+            user-select: none;
         }
     </style>
 </head>
 <body>
-    <img src="image2.png" alt="An infected cat">
+    <!-- This now links to the grave page and shows the grave image on hover -->
+    <a href="unknown.html" class="image-fader">
+        <img src="image2.png" class="img-bottom" alt="An infected cat">
+        <img src="image3.png" class="img-top" alt="A symbol appears">
+    </a>
     <div class="content">
         <h2>The Withering</h2>
         <p>
