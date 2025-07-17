@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Withering | BrackenClan</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Using the same modern styles from the homepage */
+        body {
+            background-image: url('https://raw.githubusercontent.com/TheWitheringPages/home/refs/heads/main/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            color: #d1d5db;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .main-content {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(26, 26, 26, 0.75); /* Slightly more opaque for readability */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cutive Mono', monospace;
+            color: #ffffff;
+        }
+        
+        h3 {
+            border-bottom: 1px solid rgba(107, 122, 107, 0.5);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Back button style */
+        .btn-back {
+            color: #a9a9a9;
+            border: 1px solid #a9a9a9;
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            background-color: #a9a9a9;
+            color: #1a1a1a;
+        }
+        
+        hr {
+            border-color: rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="main-content container mx-auto max-w-5xl my-12 rounded-2xl shadow-2xl">
+        <div class="px-6 py-12 md:px-12">
+
+            <!-- Header -->
+            <header class="text-center mb-12">
+                <img src="brackenlogo.png" alt="Brackenclan Logo" class="mx-auto w-32 h-32 object-contain mb-6">
+                <h1 class="text-6xl font-bold tracking-wider uppercase">BRACKENCLAN</h1>
+            </header>
+
+            <!-- Main Content Sections -->
+            <main class="space-y-12 text-lg leading-relaxed">
+
+                <!-- Identity & Culture -->
+                <section>
+                    <h2 class="text-4xl font-bold mb-4">Identity & Culture</h2>
+                    <p>BrackenClan is intelligent, brave, grounded, preferring to thrive in the secrecy of their densely forested territory. They excel at stalking, tracking, and ambushing during hunts, relying more on their environment than on brute strength or speed.</p>
+                    <p class="mt-4">The medicine cats of BrackenClan are deeply in tune with the forest around them and often interpret the growth of fungi and the behavior of crows as omens from StarClan. It is customary for medicine cats to bring offerings of shiny objects to Lichen Grove for the crows.</p>
+                </section>
+
+                <hr>
+
+                <!-- Appearance, Prey, Predators -->
+                <section class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold">Appearance</h3>
+                        <p>Earth-toned fur in shades of brown, muted ginger, gray, and black is common. Mottled patterns can be seen in tabbies, brindles, dapples, and calicos. Most cats are medium-height with lean bodies, long tails, and wide paws that aid in climbing trees.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Prey</h3>
+                        <p>Mice, voles, moles, shrew, chipmunks, woodpeckers, wrens, pigeons, red squirrels, occasional rabbit.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Predators</h3>
+                        <p>Coyotes, Bobcats, Owls, Black bears, Cougars, Wolves.</p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Camp Layout -->
+                <section>
+                    <h2 class="text-4xl font-bold mb-6 text-center">Camp Layout</h2>
+                    <p class="text-center mb-8 max-w-3xl mx-auto">Brackenclan camp is situated in the heart of their territory within an ancient forest. It is slightly sunken into the ground, forming a natural basin encircled by roots, dense brambles, and lush foliage. The camp is cleverly constructed to remain hidden and difficult to find.</p>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                        <p><strong class="text-white">Main Entrance:</strong> A narrow tunnel through thick bracken and thorny ferns, wide enough for only one cat to pass through at a time.</p>
+                        <p><strong class="text-white">Leader's Den:</strong> A spacious, hollowed-out cedar stump at the edge of the camp, overgrown with moss and lichens. The leader often addresses the clan from atop this stump.</p>
+                        <p><strong class="text-white">Warriors' Den:</strong> Nestled beneath massive hemlocks, with drooping branches acting as natural curtains. Nests are made of soft moss, leaves, and bracken.</p>
+                        <p><strong class="text-white">Apprentices' Den:</strong> A cozy depression on the western slope of the camp, padded with fallen fern fronds and sheltered by arching roots.</p>
+                        <p><strong class="text-white">Medicine Cat Den:</strong> Tucked against the far wall of the camp in a shallow cave, featuring naturally carved shelves for herbs.</p>
+                        <p><strong class="text-white">Nursery:</strong> Located beneath the intertwined roots of two ancient trees, creating a dome-shaped shelter insulated with brambles and moss.</p>
+                        <p><strong class="text-white">Elders' Den:</strong> An old, sunken tree trunk lined with soft bark and moss at the edge of the camp.</p>
+                    </div>
+                </section>
+
+                <hr>
+                
+                <!-- Territory Highlights -->
+                <section>
+                    <h2 class="text-4xl font-bold mb-6 text-center">Territory Highlights</h2>
+                    <div class="space-y-6">
+                        <p><strong class="text-white">Lichen Grove:</strong> An eerie glade filled with tall trees draped heavily in moss and lichen, creating a curtain-like effect. A sacred location for interpreting omens.</p>
+                        <p><strong class="text-white">Echoing Meadow:</strong> A serene resting place for former clan members, surrounded by dense ferns. Some say that on foggy days, you can catch glimpses of small shadows moving across the clearing.</p>
+                        <p><strong class="text-white">Softstep Pine:</strong> A section of territory filled with dense pine trees, where the forest floor is carpeted with sound-muffling pine needles.</p>
+                        <p><strong class="text-white">Nettle Warren:</strong> A dense, tangled thicket of bramble and bracken, challenging to navigate but rich with small prey.</p>
+                        <p><strong class="text-white">Old Twoleg Nest:</strong> A long-abandoned wooden nest in the southernmost part of the territory, home to mice and rats.</p>
+                        <p><strong class="text-white">Still Pool:</strong> A tranquil, still pond deep within the territory. Elders share rumors that it reflects signs of impending danger.</p>
+                        <p><strong class="text-white">Foxtail Thicket:</strong> A dense forested area home to mushrooms and fungi. Named for a fox that once made its den here, a tale told to frighten young cats.</p>
+                        <p><strong class="text-white">Endless Lake:</strong> A large pond marking the end of the Timeless Torrent and part of the tense border with Mistclan.</p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Clan Relations -->
+                <section>
+                    <h2 class="text-4xl font-bold mb-6 text-center">Common Views</h2>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                        <p><strong class="text-white">Ridgeclan:</strong> Perceived as disciplined, strong, and just allies.</p>
+                        <p><strong class="text-white">Mistclan:</strong> A tense and hostile relationship over territory, verging on war.</p>
+                        <p><strong class="text-white">Breezeclan:</strong> A neutral relationship, though Brackenclan finds their open-sky life strange.</p>
+                        <p><strong class="text-white">Loners & Rogues:</strong> Met with hostility, though the new leader is working to be more welcoming.</p>
+                        <p><strong class="text-white">Barn Cats:</strong> Tolerated if they pass through quickly and stay on the outskirts of the territory.</p>
+                        <p><strong class="text-white">Kittypets:</strong> Generally disliked and chased away, though this is another behavior the new leader seeks to change.</p>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Back Button -->
+            <footer class="text-center mt-12">
+                <a href="clan-info.html" class="btn-back inline-block px-8 py-2 rounded-lg font-bold uppercase text-sm tracking-widest">Back</a>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
